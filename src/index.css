@@ -1,13 +1,178 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, Raleway, Roboto, 'Helvetica Neue', 'Segoe UI',
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #000000;
+  color: white;
+  overflow: hidden;
+}
+
+#root {
+  height: 100vh;
+}
+
+main {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.header-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  user-select: none;
+}
+
+.inputs {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+  border-radius: 0.125rem;
+  padding: 1rem;
+  /* padding: 1rem;
+  width: 100%;
+  max-width: 700px; */
+}
+
+@media only screen and (max-width: 1200px) {
+  .inputs {
+    margin-top: 2rem;
+  }
+}
+
+.inputs input,
+.inputs textarea {
+  margin: 0.5rem 0;
+  width: 100%;
+  border: none;
+  padding: 0.5rem;
+}
+
+.inputs input[type='submit'] {
+  color: white;
+  font-size: 1.1rem;
+  background-color: #000000;
+  border: 2px solid transparent;
+  border-radius: 0.125rem;
+  cursor: pointer;
+}
+
+.inputs input[type='submit']:hover {
+  border: 2px solid white;
+}
+
+.display {
+  font-size: 4rem;
+  font-family: Raleway;
+  text-align: center;
+  text-shadow: 4px 4px 0px black;
+}
+
+.paragraph {
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.background-container {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: -28011999;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.05);
+  filter: blur(3px);
+}
+
+.background {
+  width: calc(min(100vh, 100vw));
+  height: calc(min(100vh, 100vw));
+  border: 80px solid rgba(255, 255, 255, 0.3);
+  z-index: -28011999;
+  position: absolute;
+  left: calc((100vw - min(100vh, 100vw)) / 2);
+  top: calc((100vh - min(100vh, 100vw)) / 2);
+  animation: spin infinite 60s cubic-bezier(0.6, 0.28, 0.135, 0.045);
+}
+
+.background:before {
+  content: '';
+  width: calc(min(100vh, 100vw) * 0.7);
+  height: calc(min(100vh, 100vw) * 0.7);
+  border: 80px solid rgba(255, 255, 255, 0.3);
+  z-index: -28011999;
+  position: absolute;
+  left: calc((100vw - min(100vh, 100vw)) / 2);
+  top: calc((100vh - min(100vh, 100vw)) / 2);
+  animation: spin reverse infinite 50s cubic-bezier(0.6, 0.28, 0.135, 0.045);
+}
+
+.background:after {
+  content: '';
+  width: calc(min(100vh, 100vw) * 0.4);
+  height: calc(min(100vh, 100vw) * 0.4);
+  border: 80px solid rgba(255, 255, 255, 0.3);
+  z-index: -28011999;
+  position: absolute;
+  left: calc((100vw - min(100vh, 100vw)) / 2);
+  top: calc((100vh - min(100vh, 100vw)) / 2);
+  animation: spin infinite 30s cubic-bezier(0.6, 0.28, 0.135, 0.045);
+}
+
+.background2 {
+  width: calc(min(100vh, 100vw));
+  height: calc(min(100vh, 100vw));
+  border: 120px solid rgba(255, 255, 255, 0.1);
+  z-index: -28011999;
+  position: absolute;
+  left: calc((100vw - min(100vh, 100vw)) * 0.3);
+  top: calc((100vh - min(100vh, 100vw)) * 0.7);
+  animation: spin reverse infinite 60s cubic-bezier(0.6, 0.28, 0.135, 0.045);
+}
+
+.background2:before {
+  content: '';
+  width: calc(min(100vh, 100vw) * 0.7 * 1.5);
+  height: calc(min(100vh, 100vw) * 0.7 * 1.5);
+  border: 120px solid rgba(255, 255, 255, 0.1);
+  z-index: -28011999;
+  position: absolute;
+  left: calc((100vw - min(100vh, 100vw)) * 0.3);
+  top: calc((100vh - min(100vh, 100vw)) * 0.7);
+  animation: spin infinite 50s cubic-bezier(0.6, 0.28, 0.135, 0.045);
+}
+
+.background2:after {
+  content: '';
+  width: calc(min(100vh, 100vw) * 0.4 * 1.5);
+  height: calc(min(100vh, 100vw) * 0.4 * 1.5);
+  border: 120px solid rgba(255, 255, 255, 0.1);
+  z-index: -28011999;
+  position: absolute;
+  left: calc((100vw - min(100vh, 100vw)) * 0.3);
+  top: calc((100vh - min(100vh, 100vw)) * 0.7);
+  animation: spin reverse infinite 30s cubic-bezier(0.6, 0.28, 0.135, 0.045);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
