@@ -87,6 +87,50 @@ main {
   text-align: center;
 }
 
+.letter-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  user-select: none;
+}
+
+.letter-title {
+  font-size: 2rem;
+  font-family: Raleway;
+  text-align: center;
+  text-shadow: 4px 4px 0px black;
+}
+
+.letter-paragraph {
+  font-size: 1.1rem;
+  text-align: left;
+}
+
+.letter-message {
+  font-size: 1.1rem;
+  background: black;
+  color: white;
+  border-radius: 0.125rem;
+  margin: 1rem 0;
+  padding: 1rem;
+  max-height: 70vh;
+  max-width: 100%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.letter-message p {
+  margin-bottom: 0.8rem;
+}
+
+.scrollbar-hider {
+  width: calc(100% + 2rem + 1px);
+  max-height: calc(70vh + 2px);
+  padding-right: 0.9rem;
+  overflow: scroll;
+}
+
 .background-container {
   width: 100vw;
   height: 100vh;
