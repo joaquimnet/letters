@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3000';
+const API_URL = 'https://letters-api.herokuapp.com';
 
 // Used to check if the letter exists, before committing to reading it.
 export const touchLetter = async (slug) => {
