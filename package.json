@@ -1,12 +1,12 @@
 {
-  "name": "letters",
+  "name": "letters-front",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
-    "got": "^11.8.2",
+    "axios": "^0.21.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-grid-system": "^7.1.2",

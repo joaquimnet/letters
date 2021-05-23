@@ -1,7 +1,8 @@
 import { HashRouter, Route, Switch } from 'react-router-dom';
-import { Read } from './Read';
 
-import { Write } from './Write';
+import { Read } from './Read/Read';
+import { Write } from './Write/Write';
+import { Background } from './Background/Background';
 
 function App() {
   return (
@@ -14,10 +15,7 @@ function App() {
           <Read />
         </Route>
       </Switch>
-      <div className='background-container'>
-        <div className='background'></div>
-        <div className='background2'></div>
-      </div>
+      <Background />
     </HashRouter>
   );
 }

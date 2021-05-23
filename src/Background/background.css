@@ -1,0 +1,89 @@
+.background-container {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: -28011999;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.05);
+  filter: blur(3px);
+}
+
+.background {
+  width: calc(min(100vh, 100vw));
+  height: calc(min(100vh, 100vw));
+  border: 80px solid rgba(255, 255, 255, 0.3);
+  z-index: -28011999;
+  position: absolute;
+  left: calc((100vw - min(100vh, 100vw)) / 2);
+  top: calc((100vh - min(100vh, 100vw)) / 2);
+  animation: spin infinite 60s cubic-bezier(0.6, 0.28, 0.135, 0.045);
+}
+
+.background:before {
+  content: '';
+  width: calc(min(100vh, 100vw) * 0.7);
+  height: calc(min(100vh, 100vw) * 0.7);
+  border: 80px solid rgba(255, 255, 255, 0.3);
+  z-index: -28011999;
+  position: absolute;
+  left: calc((100vw - min(100vh, 100vw)) / 2);
+  top: calc((100vh - min(100vh, 100vw)) / 2);
+  animation: spin reverse infinite 50s cubic-bezier(0.6, 0.28, 0.135, 0.045);
+}
+
+.background:after {
+  content: '';
+  width: calc(min(100vh, 100vw) * 0.4);
+  height: calc(min(100vh, 100vw) * 0.4);
+  border: 80px solid rgba(255, 255, 255, 0.3);
+  z-index: -28011999;
+  position: absolute;
+  left: calc((100vw - min(100vh, 100vw)) / 2);
+  top: calc((100vh - min(100vh, 100vw)) / 2);
+  animation: spin infinite 30s cubic-bezier(0.6, 0.28, 0.135, 0.045);
+}
+
+.background2 {
+  width: calc(min(100vh, 100vw));
+  height: calc(min(100vh, 100vw));
+  border: 120px solid rgba(255, 255, 255, 0.1);
+  z-index: -28011999;
+  position: absolute;
+  left: calc((100vw - min(100vh, 100vw)) * 0.3);
+  top: calc((100vh - min(100vh, 100vw)) * 0.7);
+  animation: spin reverse infinite 60s cubic-bezier(0.6, 0.28, 0.135, 0.045);
+}
+
+.background2:before {
+  content: '';
+  width: calc(min(100vh, 100vw) * 0.7 * 1.5);
+  height: calc(min(100vh, 100vw) * 0.7 * 1.5);
+  border: 120px solid rgba(255, 255, 255, 0.1);
+  z-index: -28011999;
+  position: absolute;
+  left: calc((100vw - min(100vh, 100vw)) * 0.3);
+  top: calc((100vh - min(100vh, 100vw)) * 0.7);
+  animation: spin infinite 50s cubic-bezier(0.6, 0.28, 0.135, 0.045);
+}
+
+.background2:after {
+  content: '';
+  width: calc(min(100vh, 100vw) * 0.4 * 1.5);
+  height: calc(min(100vh, 100vw) * 0.4 * 1.5);
+  border: 120px solid rgba(255, 255, 255, 0.1);
+  z-index: -28011999;
+  position: absolute;
+  left: calc((100vw - min(100vh, 100vw)) * 0.3);
+  top: calc((100vh - min(100vh, 100vw)) * 0.7);
+  animation: spin reverse infinite 30s cubic-bezier(0.6, 0.28, 0.135, 0.045);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

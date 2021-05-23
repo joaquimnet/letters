@@ -1,6 +1,8 @@
 import TextareaAutosize from 'react-textarea-autosize';
 import { Container, Col, Row, setConfiguration, useScreenClass } from 'react-grid-system';
 import { useState } from 'react';
+import { createLetter } from '../api';
+import { useNavigation } from '../hooks/useNavigation';
 
 setConfiguration({ gutterWidth: 80 });
 
@@ -15,11 +17,13 @@ const textAreaSizes = {
 
 export const Write = () => {
   const screenClass = useScreenClass();
-  const [form, setForm] = useState({});
-  const onChange = (e) => setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
+  const [letter, setLetter] = useState({});
+  const { navigate } = useNavigation();
+
+  const onChange = (e) => setLetter((f) => ({ ...f, [e.target.name]: e.target.value }));
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log('form: ', form);
+    createLetter(letter).then(({ slug }) => navigate('/' + slug));
   };
 
   return (
@@ -57,7 +61,7 @@ export const Write = () => {
             />
             <input type='submit' value='Seal' />
           </form>
-          <p>letter length: {form.message?.length ?? 0}</p>
+          <p>letter length: {letter.message?.length ?? 0}</p>
         </Col>
       </Row>
     </Container>
